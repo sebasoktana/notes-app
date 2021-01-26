@@ -1,0 +1,4 @@
+docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
+docker rm $(docker stop $(docker ps -a -q --filter ancestor=sebastianarrue/notes --format="{{.ID}}"))
+docker build -t sebastianarrue/notes .
+docker run -p 49160:4242 -d sebastianarrue/notes
