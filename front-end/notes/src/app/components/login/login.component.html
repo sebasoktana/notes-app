@@ -1,0 +1,45 @@
+<div ng-app="myApp" ng-controller="myController" class="container container-login">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="login-container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Username</label>
+            <input formControlName="userName" required class="form-control">
+            <div *ngIf="isFieldInvalid('userName')" class="error">Username email!</div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Password</label>
+            <input formControlName="password" required class="form-control">
+            <div *ngIf="isFieldInvalid('password')" class="error">Password Required!</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <button ng-disabled="myForm.$invalid"
+              class="btn btn-success pull-right">Login</button>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="form-group">
+            <button [routerLink]="['/login-okta']"
+              class="btn btn-primary pull-right">Login with Okta</button>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div *ngIf="isFieldInvalid('userName') || isFieldInvalid('password')" class="alert alert-danger">Credenciales
+            inválidas!</div>
+          <div *ngIf="!isFieldInvalid('userName') && !isFieldInvalid('password') && formSubmitAttempt"
+            class="alert alert-success">Login exitoso!</div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

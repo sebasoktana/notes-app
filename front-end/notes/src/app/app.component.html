@@ -1,0 +1,15 @@
+<link href="https://global.oktacdn.com/okta-signin-widget/5.1.5/css/okta-sign-in.min.css" type="text/css"
+  rel="stylesheet" />
+
+<app-navbar></app-navbar>
+
+<div class="container main-container">
+
+  <!-- <button routerLink="/"> Home </button>
+  <button *ngIf="!isAuthenticated" routerLink="/login"> Login </button>
+  <button *ngIf="isAuthenticated" (click)="logout()"> Logout </button>
+  <button routerLink="/protected"> Protected </button> -->
+  <router-outlet></router-outlet>
+
+</div>
+<notifier-container></notifier-container>

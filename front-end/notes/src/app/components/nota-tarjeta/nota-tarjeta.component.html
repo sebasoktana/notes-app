@@ -1,0 +1,15 @@
+<div class="card animated fadeIn fast" >
+    <!-- <img class="card-img-top img-fluid" [src]="nota.img" [alt]="nota.nombre"> -->
+    <div class="card-body">
+      <h4 class="card-title">{{ nota.fecha | date:'d/M/y' }}</h4>
+      <p class="card-text"> {{ nota.text.length > 150 ? (nota.text | slice:0:150) + '...' : nota.text  }} </p>
+      <!-- <p class="card-text"><small class="text-muted">{{ nota.aparicion }}</small></p> -->
+  
+      <button (click)="vernota()"
+        type="button" class="btn btn-outline-primary btn-block">
+        Ver más...
+      </button>
+  
+    </div>
+  </div>
+  

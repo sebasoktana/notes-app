@@ -1,0 +1,24 @@
+<h1 class="animated fadeIn">{{ nota.nombre | uppercase }} <small>({{ nota.fecha | date:'y' }})</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast">
+
+  <div class="col-md-4">
+
+    <img src="assets/img/note1.png" class="img-fluid" [alt]="nota.nombre">
+    <br><br>
+    <a [routerLink]="['/notas']" class="btn btn-outline-danger btn-block">Regresar</a>
+    <a (click)="eliminarNota()" class="btn btn-danger btn-block">Eliminar</a>
+
+  </div>
+
+  <div class="col-md-8">
+    <h3>{{ nota.fecha | date : 'dd-MM-yyyy hh:mm:ss'}}</h3>
+    <hr>
+    <p>
+      {{ nota.text }}
+    </p>
+
+  </div>
+
+</div>

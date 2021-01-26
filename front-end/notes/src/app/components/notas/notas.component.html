@@ -1,0 +1,10 @@
+<h1>Notas <small>Quick</small></h1>
+<hr>
+
+
+<div class="card-columns">
+
+  <app-nota-tarjeta (notaSeleccionada)="verNota( $event )" [nota]="foo" [index]="foo.id"  *ngFor="let foo of notas; let i = index"></app-nota-tarjeta>
+
+
+</div>
